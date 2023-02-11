@@ -6,11 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video-Chat-App</title>
+    <!-- Fontawesome kit -->
+    <script src="https://kit.fontawesome.com/91d2f81fc7.js" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
+    <div class="container">
 
+        <div class="join_wrapper">
+
+            <h2>Join the conversation</h2>
+
+            <div class="join_wrapper__my_peer_id">
+                <p class="join_wrapper__my_peer_id__title">Your peer id:</p>
+                <p class="join_wrapper__my_peer_id__value">xxxx-xxxx-xxxx-xxxx-xxxx</p>
+            </div>
+
+
+            <!-- Username input wrapper -->
+            <div class="input_wrapper">
+                <p class="input_wrapper__title">Username</p>
+                <div class="input_wrapper__in">
+                    <i class="fa-solid fa-user"></i>
+                    <input class="usernameInput" type="text" placeholder="Enter your username">
+                </div>
+
+            </div>
+
+            <!-- Peer id input wrapper -->
+            <div class="input_wrapper">
+                <p class="input_wrapper__title">User peer id</p>
+                <div class="input_wrapper__in">
+                    <i class="fa-solid fa-id-card"></i>
+                    <input class="connectionPeerIdInput" type="text" placeholder="Enter peer id">
+                </div>
+            </div>
+
+
+            <button class="connect_button" type='default'>Join a video call</button>
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
 
 </body>
 
