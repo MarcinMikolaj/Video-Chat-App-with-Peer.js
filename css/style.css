@@ -132,4 +132,28 @@ body {
   background-color: white;
   cursor: pointer;
 }
+
+.container .video_chat_wrapper {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .video_chat_wrapper .video_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .video_chat_wrapper .video_wrapper video {
+  margin: 10px;
+  border: 1px solid #da5213;
+  width: 400px;
+  height: 400px;
+  background-color: palegreen;
+}
 /*# sourceMappingURL=style.css.map */

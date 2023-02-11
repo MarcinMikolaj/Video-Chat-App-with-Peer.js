@@ -92,4 +92,20 @@ body {
 			cursor: pointer;
 		}
 	}
+
+	.video_chat_wrapper {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		.video_wrapper {
+			display: flex;
+			video {
+				margin: 10px;
+				border: 1px solid rgb(218, 82, 19);
+				width: 400px;
+				height: 400px;
+				background-color: palegreen;
+			}
+		}
+	}
 }
