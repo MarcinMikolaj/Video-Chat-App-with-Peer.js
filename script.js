@@ -1,10 +1,12 @@
 // Inputs
 let usernameInput;
 let destinationPeerIdInput;
+let enterMessageInput;
 
 // Buttons
 let connectButton;
 let endCallButton;
+let sendMessageButton;
 
 // Video
 let localVideo;
@@ -16,10 +18,12 @@ let joinWrapper;
 
 // Variable
 let username;
-let currentCall;
-let currentStream;
 let destinationPeerId;
+
 const peer = new Peer();
+let currentStream;
+let currentCall;
+let currentDataConnection;
 
 // Other
 let assignedPeerId;
@@ -28,10 +32,12 @@ const prepareDOMElements = () => {
 	// Inputs
 	usernameInput = document.querySelector('.usernameInput');
 	destinationPeerIdInput = document.querySelector('.destinationPeerIdInput');
+	enterMessageInput = document.querySelector('.enter_message_input');
 
 	// Buttons
 	connectButton = document.querySelector('.connect_button');
 	endCallButton = document.querySelector('.end_call_button');
+	sendMessageButton = document.querySelector('.send_message_button');
 
 	// Video
 	localVideo = document.querySelector('.local_video');
@@ -48,6 +54,7 @@ const prepareDOMElements = () => {
 const prepareDOMEvents = () => {
 	connectButton.addEventListener('click', connect);
 	endCallButton.addEventListener('click', disconnect);
+	sendMessageButton.addEventListener('click', sendMessage);
 };
 
 const main = () => {
@@ -67,6 +74,13 @@ async function connect() {
 
 	console.log(`username: ${username}`);
 	console.log(`Connect with peer id: ${destinationPeerId}`);
+
+	// Start data connection (exchange of messages)
+	currentDataConnection = peer.connect(destinationPeerId);
+
+	currentDataConnection.on('data', (data) => {
+		console.log(`Receive message: ${data}`);
+	});
 
 	joinWrapper.style.display = 'none';
 	videoChatWrapper.style.display = 'flex';
@@ -149,5 +163,22 @@ peer.on('call', (call) => {
 		console.log('Call rejected');
 	}
 });
+
+// Response on data from remote peer
+peer.on('connection', (connection) => {
+	currentDataConnection = connection;
+
+	currentDataConnection.on('data', (data) => {
+		console.log(`Receive message: ${data}`);
+	});
+});
+
+const sendMessage = () => {
+	const message = enterMessageInput.value;
+
+	currentDataConnection.send(message);
+
+	enterMessageInput.value = '';
+};
 
 document.addEventListener('DOMContentLoaded', main);
