@@ -57,18 +57,32 @@
 
         <div class="video_chat_wrapper">
 
-            <div class="video_wrapper">
-                <video class="local_video" muted></video>
-                <video class="remote_video"></video>
+            <div class="first_box">
+                <h1>Video Chat App with Peer.js</h1>
             </div>
 
+            <div class="second_box">
+                <!-- video wrapper -->
+                <div class="video_wrapper">
+                    <video class="local_video" muted></video>
+                    <video class="remote_video"></video>
+                    <button class="end_call_button">End call</button>
+                </div>
 
-            <div>
-                <input class="enter_message_input" type="text" placeholder="Enter message">
-                <button class="send_message_button">Send</button>
+                <!-- chat wrapper -->
+                <div class="chat_wrapper">
+                    <div class="chat_wrapper__section_title">
+                        <p>Data Channel</p>
+                    </div>
+                    <ul class="chat_wrapper__section_messages">
+                    </ul>
+                    <div class="chat_wrapper__section_enter">
+                        <input class="enter_message_input" type="text" placeholder="Enter message">
+                        <i class="fa-solid fa-paper-plane send_message_button"></i>
+                    </div>
+
+                </div>
             </div>
-
-            <button class="end_call_button">End call</button>
 
         </div>
 

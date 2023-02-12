@@ -135,25 +135,149 @@ body {
 
 .container .video_chat_wrapper {
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #212121;
 }
 
-.container .video_chat_wrapper .video_wrapper {
+.container .video_chat_wrapper .first_box {
+  width: 100%;
+  color: white;
+  border-bottom: 1px solid #434343;
+}
+
+.container .video_chat_wrapper .first_box h1 {
+  margin: 10px;
+  font-size: 22px;
+}
+
+.container .video_chat_wrapper .second_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
-.container .video_chat_wrapper .video_wrapper video {
+.container .video_chat_wrapper .second_box .video_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.container .video_chat_wrapper .second_box .video_wrapper video {
   margin: 10px;
-  border: 1px solid #da5213;
   width: 400px;
   height: 400px;
-  background-color: palegreen;
+  background-color: #6a6a6a;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 350px;
+  border-left: 1px solid #434343;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_title {
+  color: white;
+  width: 100%;
+  background-color: #7323a4;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_title p {
+  margin: 10px 10px;
+  font-size: 18px;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_messages {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+  list-style-type: none;
+  color: white;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_messages li {
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  background-color: #764ba2;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_enter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 10px 10px;
+  padding: 10px 0;
+  border-radius: 30px;
+  background-color: #606060;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_enter input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 10px;
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_enter input:focus {
+  outline: none;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_enter i {
+  margin-right: 15px;
+  padding: 5px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  color: white;
+  cursor: pointer;
+}
+
+.container .video_chat_wrapper .second_box .chat_wrapper .chat_wrapper__section_enter i:hover {
+  color: #7323a4;
 }
 /*# sourceMappingURL=style.css.map */

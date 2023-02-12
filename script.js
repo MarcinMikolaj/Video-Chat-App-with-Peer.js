@@ -55,6 +55,7 @@ const prepareDOMEvents = () => {
 	connectButton.addEventListener('click', connect);
 	endCallButton.addEventListener('click', disconnect);
 	sendMessageButton.addEventListener('click', sendMessage);
+	enterMessageInput.addEventListener('keypress', sendMessageE);
 };
 
 const main = () => {
@@ -178,7 +179,29 @@ const sendMessage = () => {
 
 	currentDataConnection.send(message);
 
+	showMessageInInterface(message);
 	enterMessageInput.value = '';
+};
+
+const sendMessageE = (e) => {
+	if (e.key === 'Enter') {
+		sendMessage();
+	}
+	return;
+};
+
+// **
+// Functions: add to view
+// **
+
+const showMessageInInterface = (message) => {
+	if (!message) {
+		return;
+	}
+
+	const li = document.createElement('li');
+	li.textContent = message;
+	document.querySelector('.chat_wrapper__section_messages').appendChild(li);
 };
 
 document.addEventListener('DOMContentLoaded', main);

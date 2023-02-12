@@ -1,4 +1,7 @@
 $background-color: #a7a4e6;
+$video-chat-background-color: rgb(33, 33, 33);
+$main-border-color: rgb(67, 67, 67);
+$main-color: rgb(115, 35, 164);
 
 * {
 	box-sizing: border-box;
@@ -95,16 +98,94 @@ body {
 
 	.video_chat_wrapper {
 		display: none;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		.video_wrapper {
-			display: flex;
-			video {
+		width: 100%;
+		height: 100%;
+		background-color: $video-chat-background-color;
+
+		.first_box {
+			width: 100%;
+			color: white;
+			border-bottom: 1px solid $main-border-color;
+			h1 {
 				margin: 10px;
-				border: 1px solid rgb(218, 82, 19);
-				width: 400px;
-				height: 400px;
-				background-color: palegreen;
+				font-size: 22px;
+			}
+		}
+		.second_box {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			flex-grow: 1;
+			.video_wrapper {
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+				video {
+					margin: 10px;
+					width: 400px;
+					height: 400px;
+					background-color: rgb(106, 106, 106);
+				}
+			}
+			.chat_wrapper {
+				display: flex;
+				flex-direction: column;
+				min-width: 350px;
+				border-left: 1px solid $main-border-color;
+				.chat_wrapper__section_title {
+					color: white;
+					width: 100%;
+					background-color: $main-color;
+					p {
+						margin: 10px 10px;
+						font-size: 18px;
+					}
+				}
+				.chat_wrapper__section_messages {
+					flex-grow: 1;
+					width: 100%;
+					list-style-type: none;
+					color: white;
+					li {
+						margin: 10px;
+						padding: 5px 10px;
+						border-radius: 30px;
+						background-color: #764ba2;
+					}
+				}
+				.chat_wrapper__section_enter {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-start;
+					margin: 10px 10px;
+					padding: 10px 0;
+					border-radius: 30px;
+					background-color: rgb(96, 96, 96);
+					input {
+						flex-grow: 1;
+						margin-left: 10px;
+						color: white;
+						border: none;
+						background-color: transparent;
+						&:focus {
+							outline: none;
+						}
+					}
+					i {
+						margin-right: 15px;
+						padding: 5px;
+						transition: color 0.3s;
+						color: white;
+						cursor: pointer;
+						&:hover {
+							color: $main-color;
+						}
+					}
+				}
 			}
 		}
 	}
